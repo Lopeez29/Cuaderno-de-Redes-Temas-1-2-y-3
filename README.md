@@ -143,7 +143,7 @@ Este proceso extrae la señal que moduló la frecuencia.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-# Ejercicio 6
+# Ejercicio 6 ✅
 ## - Longitudes de onda en redes WDM
 # Enunciado
 Indicar las longitudes de onda que se transmiten en cada uno de los puntos marcados en el esquema.
