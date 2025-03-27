@@ -1,4 +1,4 @@
-[# Cuaderno-de-Redes-Temas-1-2-y-3](https://github.com/Lopeez29/Redes-CuadernoDeEjerciciosParte1.git
+[# Cuaderno-de-Redes-Temas-1-2-y-3](https://github.com/Lopeez29/Cuaderno-de-Redes-Temas-1-2-y-3.git)
 # Redes Cuaderno De Ejercicios Parte 1.
 #### Alumno: López Díaz Álvaro.
 
