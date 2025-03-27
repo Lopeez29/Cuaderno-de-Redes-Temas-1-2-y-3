@@ -181,7 +181,7 @@ Es decir, todas las salidas marcadas con flechas negras llevan de manera simult�
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-#Ejercicio 6 (Revisar)
+# Ejercicio 7 (Revisar)
 ## - Encapsulamiento en una pila de protocolos de 4 capas.
 # Enunciado
 Se considera una pila de protocolos de 4 capas. La capa 4 envía un bloque de 1 Kbyte. La capa 3 añade cabeceras de 256 bits y cada paquete es de 512 bytes. La capa 2 añade cabeceras de 512 bits y el campo de datos de las tramas son de 128 bytes. La capa 1 añade a cada 30 bytes de datos: 32 bits de comienzo, un byte de parada y 16 bits de CRC. Dibujar todo el proceso de encapsulamiento del sistema transmisor y calcular la eficiencia del sistema.
