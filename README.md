@@ -219,5 +219,48 @@ Se considera una pila de protocolos de 4 capas. La capa 4 envía un bloque de 1 
   
 ![image](https://github.com/user-attachments/assets/25d7e18c-8ac5-4881-b18e-a84b0387a691)
 
+# Ejercicio 8 ✅
+## - Transmisión vía Satélite
+
+# Enunciado
+Un sistema satélite divide la información de la capa 3 en bloques de 1904 bits, a los que añade una cabecera de 64 bits.
+Cada trama tarda en transmitirse 20 ms y la latencia del satélite es de 85 ms.
+Se desea saber cuánto tiempo se tardará en transmitir 5 MBytes de información.
+
+# Datos
+Tamaño de bloque de datos = 1904 bits
+
+Cabecera por trama = 64 bits
+
+Tamaño total por trama = 1904 + 64 = 1968 bits
+
+Tiempo de transmisión por trama = 20 ms
+
+Latencia satélite (ida) = 85 ms
+
+Total de datos a enviar = 5 MBytes = 5 × 1024 × 1024 Bytes = 5,242,880 Bytes = 41,943,040 bits
+## Cálculos
+1. Conversión de datos a bits:
+5 MBytes = 5 × 1024 × 1024 Bytes = 5,242,880 Bytes
+5,242,880 Bytes × 8 = 41,943,040 bits
+
+2. Número de tramas necesarias:
+Cada trama transporta 1904 bits de datos útiles (sin contar la cabecera)
+Número de tramas = ceil(41,943,040 / 1904) = 22,040 tramas
+
+3. Tiempo de transmisión de todas las tramas:
+Cada trama tarda 20 ms
+Tiempo de transmisión = 22,040 × 20 = 440,800 ms
+
+4. Tiempo total con latencia:
+Latencia del satélite = 85 ms (se suma una sola vez)
+Tiempo total = 440,800 + 85 = 440,885 ms
+
+5. Conversión a segundos:
+440,885 ms ÷ 1000 = 440.885 segundos
+
+
+
+
 
 
