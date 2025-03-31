@@ -503,6 +503,27 @@ Tras calcular la paridad junto con los datos he llegado a la conclusión de que 
 ---
 
 
+# Ejercicio 13
+## Protocolo capa de enlace 
+# Enunciado
+ ¿A qué protocolo de la capa de enlace de datos corresponde el siguiente esquema 
+temporal? 
+
+
+![image](https://github.com/user-attachments/assets/344b244a-09af-4c7e-b3ed-8e1d81ebf742)
+
+
+# Respuesta 
+El diagrama muestra un intercambio de tramas entre dos estaciones (A y B).
+Se observa que:
+- A envía “Frame 0” a B.  
+- B responde con “ACK 1”, indicando que espera la próxima trama con número de secuencia 1.  
+- A envía “Frame 1”.  
+- B responde con “ACK 0”, indicando que espera la siguiente trama con número de secuencia 0.  
+- El proceso se repite.
+  Por tanto, se trata del protocolo Stop-and-Wait ARQ (Alternating Bit Protocol)
+
+
 
 
 
