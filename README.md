@@ -42,9 +42,15 @@ Determinar la tasa de transmisión máxima en un canal óptico con fibra que cum
 ## Resolución
 
 ## Cálculo de la Tasa de Transmisión Máxima
-La tasa de transmisión máxima se puede calcular utilizando la ecuación de Shannon:
+La tasa de transmisión máxima se puede calcular utilizando la ecuación de Shannon: $$C = B * log_2(1 + SNR)$$
 
-\[ C = B \( log_2 \) (1 + SNR) ]
+
+$$C = 1 * 10^{12} * log_2(1 + 31,6) = 5.03 * 10^{3}Gbps$$
+
+Dado que la trasmisión es distinta debido a la capacidad de los receptores opticos y de la modulacion
+
+
+$$100Gbaudios * 2bit/simbolo = 200Gbps = 0,2Tbps$$
 
 Donde:
 - \( B \) es el ancho de banda del canal en Hz
