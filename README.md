@@ -547,6 +547,23 @@ Se observa que:
 - La clave es el **temporizador** en el emisor, que provoca el **reenvío** cuando no llega el ACK esperado.
 
 
+# Ejercicio 15 
+## Diagrama de ventana deslizante 
+# Enunciado 
+Dibujar un diagrama de ventana deslizante con un receptor con buffer para tres tramas 
+y un transmisor que dispone de 5 tramas desordenadas que llegan en el orden 0, 3, 2, 
+4, 1. 
+
+(Diagrama)
+
+
+| Llegan       | 0   | 3     | 2       | 4         | 1            |
+|--------------|-----|-------|---------|-----------|--------------|
+| Ventana      | ↓   | ↓     | ↓       | ↓         | ↓            |
+| Espera       | 0 → 1 → 5 (tras liberar 1,2,3,4)                         |
+| Buffer       | [ ] | [3]   | [3,2]   | [3,2,4]   | [ ]          |
+| Entregados   | 0   | -     | -       | -         | 1,2,3,4      |
+
 
 
 
