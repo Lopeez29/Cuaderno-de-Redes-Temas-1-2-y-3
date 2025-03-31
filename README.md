@@ -17,6 +17,15 @@
 
 ## Resolución
 
+La capacidad se calcula con la formula de Nyquist: $T = 2H * log_2(V)$  
+(T = Capacidad maxima)
+(H = Ancho de banda)
+(V = niveles de señal)  
+
+
+$$H = \frac{T}{2 * log_2(v)} = \frac{1 * 10^{7}}{2 * log_2(17)} = 1.23MHz$$
+
+
 -----------------------------------------------------------------------------------------------------------------
 # Ejercicio 2
 
