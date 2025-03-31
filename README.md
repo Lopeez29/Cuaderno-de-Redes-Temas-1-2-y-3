@@ -131,6 +131,8 @@ Recuperación de la señal FM:
 Aplicar un discriminador de frecuencia (demodulador FM) para detectar los cambios de frecuencia.
 
 Este proceso extrae la señal que moduló la frecuencia.
+
+
 ![image](https://github.com/user-attachments/assets/cff04e5d-2cf7-41c3-a8cc-87bab896170d)
 
 
