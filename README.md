@@ -217,6 +217,9 @@ $\text{Eficiencia} = \frac{\text{Datos Útiles}}{\text{Datos Totales}} \times 10
 - *Datos totales transmitidos: **3960 bytes*.
 
 
+$\text{Eficiencia} = \frac{1024}{3960} \times 100= 25.6\%$  
+La *eficiencia del sistema es del 25.6%.
+
 # Ejercicio 8 ✅
 ## - Transmisión vía Satélite
 
