@@ -259,6 +259,120 @@ Tiempo total = 440,800 + 85 = 440,885 ms
 5. Conversión a segundos:
 440,885 ms ÷ 1000 = 440.885 segundos
 
+   # Ejercicio 9
+   ## -  Resultado de un paquete de datos
+
+   
+   # Enunciado
+Calcular el resultado de un paquete de datos “1111011101010101” en un sistema de 
+enlace de datos con las siguientes especificaciones: 
+• Secuencia de inicio de trama “010101010”. 
+• Protección frente a errores H(7,4). 
+• Tamaño máximo por trama de 4 bytes.
+
+
+en un sistema de enlace de datos con las siguientes especificaciones:
+
+1. **Secuencia de inicio de trama**: `010101010` (9 bits)  
+2. **Protección frente a errores**: Código Hamming \[7,4\] (cada 4 bits de datos se codifican en 7 bits)  
+3. **Tamaño máximo por trama**: 4 bytes (32 bits de datos).  
+   - En este caso, solo tenemos 16 bits de datos, por lo que todo cabe en una única trama.
+
+## 1. División de los datos en nibbles (4 bits)
+
+Los 16 bits se dividen en 4 grupos de 4 bits:
+Nibble 1: 1111 Nibble 2: 1011 Nibble 3: 0101 Nibble 4: 0101
+
+## 2. Codificación Hamming (7,4)
+
+El **Hamming (7,4)** agrega 3 bits de paridad a cada nibble, generando 7 bits totales por cada grupo de 4 bits.
+
+### 2.1 Convenciones usadas
+
+- Se asume **paridad par**
+- Orden típico de bits en H(7,4):
+Posición: 1 2 3 4 5 6 7 Tipo: P1 P2 D1 P3 D2 D3 D4
+- `D1, D2, D3, D4` son los 4 bits originales de datos.
+- `P1, P2, P3` son bits de paridad que cubren distintas posiciones.
+
+### 2.2 Cálculo de paridades
+
+**Fórmulas de paridad** (para paridad par):
+- `P1` cubre bits 1, 3, 5, 7
+- `P2` cubre bits 2, 3, 6, 7
+- `P3` cubre bits 4, 5, 6, 7
+
+#### Nibble 1: `1111`
+- Datos: D1=1, D2=1, D3=1, D4=1
+- Distribución en posiciones:
+- (1) P1=? (2) P2=? (3) D1=1 (4) P3=? (5) D2=1 (6) D3=1 (7) D4=1
+- - Cálculo de paridades:
+- P1 cubre (1,3,5,7) = P1,1,1,1 → suma de datos = 1+1+1 = 3 (impar) → P1 = 1 para que total sea par.
+- P2 cubre (2,3,6,7) = P2,1,1,1 → suma de datos = 1+1+1 = 3 (impar) → P2 = 1.
+- P3 cubre (4,5,6,7) = P3,1,1,1 → suma de datos = 1+1+1 = 3 (impar) → P3 = 1.
+
+- Resultado Hamming:  
+(1)1 (2)1 (3)1 (4)1 (5)1 (6)1 (7)1 = 1111111
+
+#### Nibble 2: `1011`
+- Datos: D1=1, D2=0, D3=1, D4=1
+- Distribución en posiciones:
+(1) P1=? (2) P2=? (3) D1=1 (4) P3=? (5) D2=0 (6) D3=1 (7) D4=1
+- Cálculo de paridades:
+- P1 cubre (1,3,5,7) = P1,1,0,1 → suma de datos = 1+0+1 = 2 (par) → P1 = 0.
+- P2 cubre (2,3,6,7) = P2,1,1,1 → suma de datos = 1+1+1 = 3 (impar) → P2 = 1.
+- P3 cubre (4,5,6,7) = P3,0,1,1 → suma de datos = 0+1+1 = 2 (par) → P3 = 0.
+
+- Resultado Hamming:  
+(1)0 (2)1 (3)1 (4)0 (5)0 (6)1 (7)1 = 0110011
+
+#### Nibble 3: `0101`
+- Datos: D1=0, D2=1, D3=0, D4=1
+- Distribución en posiciones:
+(1) P1=? (2) P2=? (3) D1=0 (4) P3=? (5) D2=1 (6) D3=0 (7) D4=1
+- Cálculo de paridades:
+- P1 cubre (1,3,5,7) = P1,0,1,1 → suma de datos = 0+1+1 = 2 (par) → P1 = 0.
+- P2 cubre (2,3,6,7) = P2,0,0,1 → suma de datos = 0+0+1 = 1 (impar) → P2 = 1.
+- P3 cubre (4,5,6,7) = P3,1,0,1 → suma de datos = 1+0+1 = 2 (par) → P3 = 0.
+
+- Resultado Hamming:  
+(1)0 (2)1 (3)0 (4)0 (5)1 (6)0 (7)1 = 0100101
+
+#### Nibble 4: `0101`
+- Es igual al anterior (`0101`), por lo que el resultado Hamming también es `0100101`.
+
+## 3. Unir los nibbles codificados
+
+Cada nibble se convierte en 7 bits, así que el bloque de datos codificado completo (28 bits) es:
+1111111 0110011 0100101 0100101
+
+## 4. Añadir la secuencia de inicio de trama
+
+La **secuencia de inicio** es `010101010` (9 bits). Se antepone al bloque codificado:
+
+010101010 (inicio) + 1111111011001101001010100101 (datos codificados)
+
+## 5. Resultado final
+
+El **paquete de salida** (o trama) es la concatenación de la secuencia de inicio y los 28 bits de datos codificados:
+
+0101010101111111011001101001010100101
+
+- **Longitud total**: 9 bits de cabecera + 28 bits de datos codificados = 37 bits.
+
+---
+
+## Resumen
+
+1. Se dividió el mensaje original de 16 bits en 4 nibbles de 4 bits.
+2. Cada nibble se codificó con Hamming (7,4), generando 7 bits por nibble.
+3. Se unieron los 4 nibbles codificados (28 bits totales).
+4. Se antepuso la secuencia de inicio `010101010` (9 bits).
+5. El resultado final es una única trama de 37 bits:
+
+0101010101111111011001101001010100101
+
+
 
 
 
