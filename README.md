@@ -374,6 +374,86 @@ El **paquete de salida** (o trama) es la concatenación de la secuencia de inici
 
 
 
+# Ejercicio 10
+## calcular la trama resultante
+
+
+# Enunciado
+ Un fabricante indica que su sistema integra un CRC-8 con el siguiente polinomio 
+generador: 𝐺(𝑥) = 𝑥^8 + 𝑥^7 + 𝑥^2 + 1. Plantear los pasos que se deben realizar para 
+calcular la trama resultante, considerando que el CRC se aplica al final de la trama 2 
+del ejercicio anterior. 
+
+# Cálculo de la trama resultante con CRC-8 (Polinomio \(x^8 + x^7 + x^2 + 1\))
+
+En este ejercicio se parte de la **trama final** obtenida en el anterior (la “Trama 2”), a la cual ahora se le debe añadir un **CRC-8** calculado con el polinomio generador:
+\[
+G(x) \;=\; x^8 \;+\; x^7 \;+\; x^2 \;+\; 1
+\]
+
+> **Nota**: La trama de entrada (del ejercicio anterior) tenía 37 bits. A estos 37 bits se les aplicará el proceso estándar de CRC-8:  
+> 1. Se añaden 8 bits (ceros) de relleno al final.  
+> 2. Se realiza la división polinomial (XOR) entre ese bloque de datos (ahora de 45 bits) y el polinomio generador \(G(x)\).  
+> 3. El **residuo** (remainder) resultante de 8 bits es el CRC-8.  
+> 4. Dicho CRC (8 bits) se anexa al **final** de la trama original de 37 bits, obteniendo así la **trama definitiva** de 45 bits.
+
+---
+
+## 1. Polinomio generador en notación binaria
+
+El polinomio:
+\[
+G(x) = x^8 + x^7 + x^2 + 1
+\]
+se representa habitualmente en binario (9 bits si contamos el bit de \(x^8\) hasta el de \(x^0\)) como:
+110000101
+
+
+---
+
+## 2. Trama a la que se aplica el CRC-8
+
+Supongamos que la **trama** obtenida en el ejercicio anterior (Trama 2) es (37 bits):
+0101010101111111011001101001010100101
+Para aplicar un CRC de grado 8 (CRC-8), se deben realizar los pasos siguientes:
+
+1. **Convertir la trama en una secuencia binaria** (ya la tenemos de 37 bits).  
+2. **Anexar 8 ceros** al final (uno por cada bit de CRC que vamos a calcular).  
+   - Ahora el bloque temporal a dividir tiene 37 + 8 = 45 bits.
+3. **Dividir** ese bloque de 45 bits entre el polinomio generador \(G(x)\) (mediante XOR, sin acarreo).  
+   - El método típico es la “división polinomial” bit a bit: se alinea el polinomio con el primer 1 significativo, se hace XOR, se avanza un bit y se repite hasta recorrer los 45 bits.  
+4. **Obtener el residuo (remainder)** de 8 bits que queda tras la división.  
+5. **Anexar** esos 8 bits (CRC) a la **trama original** de 37 bits. El resultado final será de 37 + 8 = 45 bits.
+
+---
+## 4. Resultado final
+
+- **CRC-8**: es un valor de 8 bits, que se representa en binario u ocasionalmente en hexadecimal.  
+- La **trama definitiva**:  
+
+
+- **37 bits** → Datos originales  
+- **8 bits**  → CRC calculado
+
+Por lo tanto, la trama completa tiene:
+
+37 bits + 8 bits = **45 bits en total**
+
+Se puede expresar de la siguiente manera:
+
+**Trama final** = [37 bits de datos] + [8 bits de CRC] = 45 bits
+
+
+Resumen del calculo:
+
+1. **Tomar la trama de 37 bits**:  
+0101010101111111011001101001010100101
+   2. **Añadir 8 ceros** (bits de relleno) → 45 bits.  
+3. **Dividir** por \(G(x) = 110000101\) (XOR).  
+4. **El residuo** (8 bits) se llama CRC.  
+5. **Anexar** ese CRC al final de la trama original.
+
+
 
 
 
