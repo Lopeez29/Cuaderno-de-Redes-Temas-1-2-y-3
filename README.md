@@ -176,7 +176,7 @@ Es decir, todas las salidas marcadas con flechas negras llevan de manera simult�
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-# Ejercicio 7 
+# Ejercicio 7 ✅
 ## - Encapsulamiento y eficiencia en una pila de 4 capas
 
 Se analiza una pila de protocolos con 4 capas. El objetivo es detallar cómo se encapsulan los datos a medida que descienden por la pila y calcular la eficiencia final del sistema de transmisión.
@@ -260,7 +260,7 @@ Tiempo total = 440,800 + 85 = 440,885 ms
 5. Conversión a segundos:
 440,885 ms ÷ 1000 = 440.885 segundos
 
-   # Ejercicio 9
+   # Ejercicio 9 ✅
    ## -  Resultado de un paquete de datos
 
    
@@ -375,7 +375,7 @@ El **paquete de salida** (o trama) es la concatenación de la secuencia de inici
 
 
 
-# Ejercicio 10
+# Ejercicio 10 ✅
 ## calcular la trama resultante
 
 
@@ -454,7 +454,7 @@ Resumen del calculo:
 4. **El residuo** (8 bits) se llama CRC.  
 5. **Anexar** ese CRC al final de la trama original.
 
-# Ejercicio 11
+# Ejercicio 11 ✅
 ## Nº Errores para H(15,11) y CRC-32
 
 
@@ -466,7 +466,7 @@ Resumen del calculo:
 
 - CRC-32: no corrige errores por sí mismo; es un método de detección de errores muy robusto (con baja probabilidad de no detectar errores), pero no los corrige.
 
-# Ejercicio 12
+# Ejercicio 12 ✅
 ## datos útiles que se han transmitido
 
 
@@ -504,7 +504,7 @@ Tras calcular la paridad junto con los datos he llegado a la conclusión de que 
 ---
 
 
-# Ejercicio 13
+# Ejercicio 13 ✅
 ## Protocolo capa de enlace 
 # Enunciado
  ¿A qué protocolo de la capa de enlace de datos corresponde el siguiente esquema 
@@ -525,7 +525,7 @@ Se observa que:
   Por tanto, se trata del protocolo Stop-and-Wait ARQ (Alternating Bit Protocol)
 
 
-  # Ejercicio 14
+  # Ejercicio 14✅
   ## Adaptabilidad del Alternating Bit protocol
   # Enunciado
 
@@ -548,7 +548,7 @@ Se observa que:
 - La clave es el **temporizador** en el emisor, que provoca el **reenvío** cuando no llega el ACK esperado.
 
 
-# Ejercicio 15 
+# Ejercicio 15 ✅
 ## Diagrama de ventana deslizante 
 # Enunciado 
 Dibujar un diagrama de ventana deslizante con un receptor con buffer para tres tramas 
@@ -566,7 +566,7 @@ y un transmisor que dispone de 5 tramas desordenadas que llegan en el orden 0, 3
 | Entregados   | 0   | -     | -       | -         | 1,2,3,4      |
 
 
-# Ejercicio 16 
+# Ejercicio 16 ✅
 ## Canal coaxial con FMD
 # Enunciado
 16. Un canal coaxial con FDM con una tasa de transmisión de 500 Mbit/s, con una longitud media de trama de 
@@ -622,7 +622,7 @@ T = 12584 bits / 500,000,000 bits/s ≈ 25.17 μs
 ---
 
 
-# Ejercicio 17 
+# Ejercicio 17 ✅
 ## - Codificación Manchester y Manchester Diferencial
 
 # Enunciado
@@ -677,7 +677,7 @@ Siempre hay una transición en la mitad del bit (igual que en Manchester estánd
  **Nota:** Para una visualización completa, se recomienda usar herramientas como Python con `matplotlib` o software como Wireshark (en modo simulación) para representar los cambios de señal.
 
 
-# Ejercicio 18
+# Ejercicio 18 ✅
 ## Diseña una red Bluetooth
 
 # Enunciado
@@ -712,7 +712,7 @@ de expansión con raíz B5.
 ![image](https://github.com/user-attachments/assets/f67b3863-bd09-4de7-acc2-0e7163a3a19e)
 
 
-# Ejercicio 19 
+# Ejercicio 19 ✅
 ## - Rutado entre switches usando árbol de expansión
 
 ## Enunciado
@@ -758,7 +758,7 @@ Esto genera los siguientes caminos:
 ---
 
 
-# Ejercicio 20 
+# Ejercicio 20 ✅
 ## - Árbol de Expansión con B3 inactivo
 
 
