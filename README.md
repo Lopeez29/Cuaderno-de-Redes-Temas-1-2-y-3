@@ -176,43 +176,46 @@ Es decir, todas las salidas marcadas con flechas negras llevan de manera simult�
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-# Ejercicio 7 (Revisar)
-## - Encapsulamiento en una pila de protocolos de 4 capas.
-# Enunciado
-Se considera una pila de protocolos de 4 capas. La capa 4 envía un bloque de 1 Kbyte. La capa 3 añade cabeceras de 256 bits y cada paquete es de 512 bytes. La capa 2 añade cabeceras de 512 bits y el campo de datos de las tramas son de 128 bytes. La capa 1 añade a cada 30 bytes de datos: 32 bits de comienzo, un byte de parada y 16 bits de CRC. Dibujar todo el proceso de encapsulamiento del sistema transmisor y calcular la eficiencia del sistema.
-## Diagrama del proceso de encapsulamiento:
-![image](https://github.com/user-attachments/assets/f6c61c71-6be7-4134-8d57-bc2fb83f2d77)
-## Resolución
+# Ejercicio 7 
+## - Encapsulamiento y eficiencia en una pila de 4 capas
+
+Se analiza una pila de protocolos con 4 capas. El objetivo es detallar cómo se encapsulan los datos a medida que descienden por la pila y calcular la eficiencia final del sistema de transmisión.
+
+---
+
+## Detalle del proceso de encapsulamiento
+
 ### Capa 4
-- Datos enviados: 1024 bytes
-- Cabecera: 256 bits = **32 bytes**
-- Los datos se dividen en dos bloques de 480 bytes
-- Total capa 4: 2 × (480 + 32) = **1024 bytes**
+- Se inicia con un bloque de datos de **1 KByte (1024 bytes)** que será enviado por esta capa.
 
 ### Capa 3
-- Cabecera: 256 bits = **32 bytes**
-- Cada paquete: 512 bytes = 480 datos + 32 cabecera
-- Cada uno se encapsula con cabecera de 64 bytes (512 bits)
-- Total capa 3: 2 × (512 + 64) = **1152 bytes**
+- Cada bloque encapsulado recibe una **cabecera de 256 bits (32 bytes)**.
+- El tamaño máximo permitido por paquete es de **512 bytes**.
+- Esto obliga a dividir el bloque original en **3 paquetes**, ya que con las cabeceras, los datos no caben en solo dos.
 
 ### Capa 2
-- Cabecera: 512 bits = **64 bytes**
-- Cada trama: 128 bytes de datos
-- Los 1152 bytes se dividen en: 1152 / 128 = **9 tramas**
-- Cada trama lleva 64 bytes extra ⇒ 9 × (128 + 64) = **1728 bytes**
+- Por cada paquete recibido, se agrega una **cabecera de 512 bits (64 bytes)**.
+- El tamaño de cada trama es de **128 bytes**, por lo tanto:
+  - Un paquete de 521 bytes (489 de datos + 32 de cabecera) se divide en **8 tramas**.
 
 ### Capa 1
-- Cada 30 bytes de datos:
-  - 4 bytes inicio
-  - 2 bytes CRC
-  - 1 byte parada ⇒ total = **7 bytes de sobrecarga**
-- 1728 bytes totales se dividen en 30 bytes → 1728 / 30 = **57.6 ≈ 58 bloques**
-- Cada uno tiene 30 + 7 = **37 bytes**
-- Total: 58 × 37 = **2146 bytes transmitidos**
+- Cada grupo de **30 bytes de datos** requiere:
+  - **4 bytes** de inicio,
+  - **1 byte** de parada,
+  - **2 bytes** de CRC.
+- Así, una unidad completa de transmisión en esta capa suma **37 bytes** por cada 30 bytes útiles.
 
-  ## Calculo de eficiencia
-  
-![image](https://github.com/user-attachments/assets/25d7e18c-8ac5-4881-b18e-a84b0387a691)
+---
+
+## Cálculo de la eficiencia
+
+Se define como:
+
+$\text{Eficiencia} = \frac{\text{Datos Útiles}}{\text{Datos Totales}} \times 100%$
+
+- *Datos útiles: **1024 bytes*.
+- *Datos totales transmitidos: **3960 bytes*.
+
 
 # Ejercicio 8 ✅
 ## - Transmisión vía Satélite
