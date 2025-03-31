@@ -613,5 +613,64 @@ c) ¿Cuánto tiempo tardará un nodo en detectar una colisión?
 
 T = 12584 bits / 500,000,000 bits/s ≈ 25.17 μs
 
+---
+
+
+# Ejercicio 17 
+## - Codificación Manchester y Manchester Diferencial
+
+# Enunciado
+
+Representar la trama `1111111101011010101011` con codificación:
+- Manchester
+- Manchester Diferencial
+
+ **Indicar las unidades y magnitudes en los ejes.**
+
+---
+
+## Codificación Manchester
+
+La codificación Manchester consiste en una transición en el **medio del bit**:
+- Bit `1`: transición de **bajo a alto**.
+- Bit `0`: transición de **alto a bajo**.
+
+Cada bit se representa en **1 unidad de tiempo**, con cambio de nivel en la mitad del intervalo.
+
+### Ejemplo de representación (simplificada):
+
+| Bit     | Nivel lógico | Codificación Manchester |
+|---------|--------------|--------------------------|
+| `1`     | ↧↥           | Bajo → Alto              |
+| `0`     | ↥↧           | Alto → Bajo              |
+| ...     | ...          | ...                      |
+
+---
+
+## Codificación Manchester Diferencial
+
+En Manchester diferencial:
+- **Bit 1**: hay **transición al inicio** del bit.
+- **Bit 0**: **no hay transición** al inicio.
+Siempre hay una transición en la mitad del bit (igual que en Manchester estándar).
+
+### Lógica:
+- Se parte de un nivel inicial (por ejemplo, bajo).
+- Se alterna o mantiene dependiendo del bit recibido.
+
+---
+
+## Representación gráfica
+
+- **Eje X**: Tiempo (en unidades de bit)
+- **Eje Y**: Nivel de voltaje (por ejemplo, +V / 0V)
+- El gráfico debe mostrar los cambios de nivel según las reglas de cada codificación.
+
+---
+
+ **Nota:** Para una visualización completa, se recomienda usar herramientas como Python con `matplotlib` o software como Wireshark (en modo simulación) para representar los cambios de señal.
+
+
+
 
 
