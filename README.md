@@ -70,6 +70,22 @@ Si en el sistema anterior se introduce un conector de fibra con un **20% de pér
 
 ## Resolución
 
+a) ¿Se verá afectada la tasa de transmisión máxima?
+No.
+La tasa de transmisión máxima teórica (según Shannon) no se ve afectada directamente por las pérdidas, ya que depende del ancho de banda y del SNR (relación señal/ruido).
+Pero las pérdidas sí afectan el SNR efectivo, ya que disminuyen la potencia de la señal, lo que puede afectar la capacidad real de transmisión si no se compensa.
+
+b) ¿Qué velocidad máxima se tendrá en la salida?
+La pérdida del 20% reduce la señal en términos de potencia, así que afectará la velocidad efectiva de salida (no la capacidad teórica).
+
+Tasa máxima previamente calculada (por modulación): 0.2 Tbps = 200 Gbps
+
+
+Si hay una pérdida del 20%, se conserva el 80% de la señal útil, por tanto:
+**Velocidad máxima de salida**:  
+200 Gbps × 0.8 = **160 Gbps**
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 
