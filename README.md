@@ -115,11 +115,9 @@ Analizando la señal en la imagen, se pueden observar dos tipos de variaciones:
 
 Variación en la frecuencia: hay segmentos donde la frecuencia (cantidad de oscilaciones por segundo) cambia bruscamente.
 
-Variación en la amplitud: varía de forma suave.
-
 #### Modulaciones aplicadas:
 
-- Modulación en Amplitud (AM)
+- Modulación en Fase
 
 - Modulación en Frecuencia (FM)
 
@@ -127,11 +125,6 @@ Variación en la amplitud: varía de forma suave.
 
 Para extraer ambas señales, se deben aplicar filtros adecuados:
 
-Recuperación de la señal AM:
-
-Aplicar un detector de envolvente para extraer la envolvente de la señal modulada.
-
-La envolvente corresponde directamente a la señal original moduladora.
 
 Recuperación de la señal FM:
 
