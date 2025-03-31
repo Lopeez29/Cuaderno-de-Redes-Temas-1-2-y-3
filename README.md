@@ -471,16 +471,19 @@ Resumen del calculo:
 
 
 # Enunciado
-Se recibe la trama “1111111101011010101011” y se conoce que el protocolo está 
+Se recibe la trama “11111111 01011010101011” y se conoce que el protocolo está 
 constituido por una cabecera “11111111” y que los datos están codificados con 
 H(14,10), ¿cuáles son los datos útiles que se han transmitido? 
 
 ---
 
 # Resultado 
-se recibe una trama binaria: 111111101010101010101
 
-y se sabe que:
+
+### Datos Codificados:
+01011010101011
+
+Se sabe que:
 
 1. El **protocolo** añade una **cabecera** de 8 bits, indicada como `11111111`.
 2. Los **datos** van codificados mediante un **Hamming(14,10)**, es decir, cada bloque de 14 bits contiene 10 bits de información y 4 bits de paridad.
@@ -489,18 +492,78 @@ El objetivo es **determinar los 10 bits de datos originales** (los “datos úti
 
 ---
 
-- La cabecera ocupa los **primeros 8 bits**.
-- Aunque en la trama recibida se observa `11111110` al inicio, se asume (según la descripción del protocolo) que la intención es que esos 8 bits correspondan a `11111111` (pudiera haber un error de un bit en la cabecera, pero el ejercicio no se centra en ello).
+La cabecera ocupa los **primeros 8 bits**.
 
-Tomando la idea de que los **8 bits de cabecera** son fijos (`11111111`), se separan de la secuencia.  
-En total, la trama tiene 21 bits, por lo que, tras la cabecera, **restan 13 bits**.  
 
-Para H(14,10) harían falta **14 bits** de datos codificados. Es posible que exista un bit perdido o un pequeño desajuste en el enunciado. Aun así, se entiende que el bloque Hamming debería ser de 14 bits.
-**H(14,10)**, **siempre** habrá **10 bits** de información
-Tras calcular la paridad junto con los datos he llegado a la conclusión de que tal como está redactado el ejercicio presenta un ligero desfase (21 bits en vez de 22), lo que sugiere que puede faltar un bit en la trama recibida o existir un error en la cabecera.
-(- **Cabecera**: 8 bits (`11111111`).  
-- **Bloque Hamming(14,10)**: 14 bits totales, de los cuales **10** son datos útiles y **4** son de paridad.  )
+En los códigos Hamming, los bits de paridad suelen estar en las posiciones que son potencias de 2:
+Posiciones 1, 2, 4, 8 → paridad
+Posiciones restantes → datos
+Posición:    1  2  3  4  5  6  7  8  9 10 11 12 13 14
+Contenido:   p1 p2 d1 p4 d2 d3 d4 p8 d5 d6 d7 d8 d9 d10
+Sustituimos la trama recibida:
+Trama:       01111010101011
 
+Tomamos solo las posiciones de datos:
+
+Posición 3 (d1): 1
+
+Posición 5 (d2): 1
+
+Posición 6 (d3): 0
+
+Posición 7 (d4): 1
+
+Posición 9 (d5): 1
+
+Posición 10 (d6): 0
+
+Posición 11 (d7): 1
+
+Posición 12 (d8): 0
+
+Posición 13 (d9): 1
+
+Posición 14 (d10): 1
+
+Entonces los datos útiles transmitidos son:
+
+- 1101101011
+
+
+
+# Decodificación de Trama con Hamming (14,10)
+
+## Trama Recibida
+11111111010110101011
+
+
+## Cabecera
+11111111
+
+## Datos Codificados (14 bits)
+01011010101011
+
+
+## Estructura del Código Hamming (14,10)
+
+| Posición | Tipo     | Bit |
+|----------|----------|-----|
+| 1        | Paridad  | 0   |
+| 2        | Paridad  | 1   |
+| 3        | Dato     | 0   |
+| 4        | Paridad  | 1   |
+| 5        | Dato     | 1   |
+| 6        | Dato     | 0   |
+| 7        | Dato     | 1   |
+| 8        | Paridad  | 0   |
+| 9        | Dato     | 1   |
+| 10       | Dato     | 0   |
+| 11       | Dato     | 1   |
+| 12       | Dato     | 0   |
+| 13       | Dato     | 1   |
+| 14       | Dato     | 1   |
+
+0101101011
 ---
 
 
