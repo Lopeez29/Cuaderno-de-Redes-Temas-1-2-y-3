@@ -2,7 +2,7 @@
 # Redes Cuaderno De Ejercicios Parte 1.
 #### Alumno: López Díaz Álvaro.
 
-# Ejercicio 1
+# Ejercicio 1 ✅
 
 # Cálculo del Ancho de Banda y Tipo de Medio Guiado
 
@@ -27,7 +27,7 @@ $$H = \frac{T}{2 * log_2(v)} = \frac{1 * 10^{7}}{2 * log_2(17)} = 1.23MHz$$
 
 
 -----------------------------------------------------------------------------------------------------------------
-# Ejercicio 2
+# Ejercicio 2 ✅
 
 # Cálculo de la Tasa de Transmisión Máxima en un Canal Óptico con Fibra
 
@@ -59,7 +59,7 @@ Donde:
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-# Ejercicio 3
+# Ejercicio 3 ✅
 
 ## Enunciado
 
