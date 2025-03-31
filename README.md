@@ -736,7 +736,7 @@ Switches involucrados: B1 B3 B5 B2 B4
 
 ## Ruta esperada con raíz en B5
 
-Suponiendo que todos los enlaces tienen el mismo costo y se conectan de forma simple el árbol de expansión podría tomar esta forma lógica:
+Suponiendo que todos los enlaces se conectan de forma simple el árbol de expansión podría tomar esta forma lógica:
 
    B5
   / | \
@@ -756,3 +756,48 @@ Esto genera los siguientes caminos:
 - B2 → B3 → B5
 
 ---
+
+
+# Ejercicio 20 
+## - Árbol de Expansión con B3 inactivo
+
+
+## Enunciado
+
+Con base en el árbol de expansión anterior (con raíz en B5), determinar cómo se reorganiza la red si el **switch B3 deja de funcionar**.
+
+
+![image](https://github.com/user-attachments/assets/614f84c3-8d4d-4a7b-9acf-48fd210b2442)
+
+
+---
+
+## Contexto
+
+
+- **Switch B3** está **fuera de servicio**.
+- En el árbol anterior, **B2 se conectaba a través de B3**.
+
+---
+
+## Nuevo árbol de expansión (sin B3)
+
+   B5
+  /  \
+B4    B1
+       |
+      B2
+
+
+
+### 🔗 Rutas:
+- B4 → B5
+- B1 → B5
+- B2 → B1 → B5
+
+---
+
+
+
+
+
