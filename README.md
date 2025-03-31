@@ -453,8 +453,20 @@ Resumen del calculo:
 4. **El residuo** (8 bits) se llama CRC.  
 5. **Anexar** ese CRC al final de la trama original.
 
+# Ejercicio 11
+## Nº Errores para H(15,11) y CRC-32
 
 
+# Enunciado
+¿Cuántos errores pueden llegar a corregir la codificación H(15,11) y el CRC-32? 
+
+# Respuesta
+- Hamming(15,11): puede corregir 1 bit erróneo por bloque de 15 bits (y detectar hasta 2 bits erróneos).
+
+- CRC-32: no corrige errores por sí mismo; es un método de detección de errores muy robusto (con baja probabilidad de no detectar errores), pero no los corrige.
+
+
+---
 
 
 
