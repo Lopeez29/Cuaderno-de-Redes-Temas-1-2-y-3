@@ -524,6 +524,31 @@ Se observa que:
   Por tanto, se trata del protocolo Stop-and-Wait ARQ (Alternating Bit Protocol)
 
 
+  # Ejercicio 14
+  ## Adaptabilidad del Alternating Bit protocol
+  # Enunciado
+
+  ¿Se puede aplicar el protocolo del ejercicio anterior en el siguiente escenario?
+
+  
+  ![image](https://github.com/user-attachments/assets/4497623d-8f24-41c6-b2a1-3ea22e02e159)
+
+
+  # Respuesta
+  Se observa que:
+  - El **Emisor** envía:
+  1. **Frame 0**, con número de secuencia \(S=0\).
+  2. **Frame 1**, con número de secuencia \(S=1\), que se **pierde** en la red.
+- El **Receptor**:
+  - Recibe correctamente el **Frame 0** y envía un **ACK 1**.
+  - No recibe el **Frame 1**, así que no puede responder con el **ACK 0** esperado.
+    Por tanto, **sí** se puede aplicar el mismo protocolo en este escenario: el proceso de temporización y reenvío cubre la situación de que una trama se pierda en el camino.
+  - El **Stop-and-Wait ARQ** (Alternating Bit Protocol) **funciona** incluso si hay tramas perdidas o ACKs perdidos.
+- La clave es el **temporizador** en el emisor, que provoca el **reenvío** cuando no llega el ACK esperado.
+
+
+
+
 
 
 
