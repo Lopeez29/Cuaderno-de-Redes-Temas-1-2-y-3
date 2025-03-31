@@ -699,5 +699,60 @@ Crear 3 Piconets independientes
 - Los maestros pueden ser distintos dispositivos o un único dispositivo actuando como **maestro en múltiples piconets secuencialmente**.
 
 
+# Ejercicio 19
+## Enrutamiento de Switches
+
+# Enunciado
 
 
+Cuál será el rutado entre los siguientes switches si utilizan para su conexión un árbol 
+de expansión con raíz B5.
+
+
+![image](https://github.com/user-attachments/assets/f67b3863-bd09-4de7-acc2-0e7163a3a19e)
+
+
+# Ejercicio 19 
+## - Rutado entre switches usando árbol de expansión
+
+## Enunciado
+
+> ¿Cuál será el rutado entre los siguientes switches si se utiliza un **árbol de expansión** (Spanning Tree) con **raíz en B5**?
+
+Switches involucrados: B1 B3 B5 B2 B4
+
+
+
+---
+
+## Concepto: Spanning Tree
+
+- Se usa para evitar bucles en redes conmutadas.
+- Selecciona una **raíz (root bridge)** (en este caso B5).
+- Desde esa raíz, se elige el camino de **menor costo** a cada switch.
+- Se eliminan los enlaces redundantes que formarían ciclos.
+
+---
+
+## Ruta esperada con raíz en B5
+
+Suponiendo que todos los enlaces tienen el mismo costo y se conectan de forma simple el árbol de expansión podría tomar esta forma lógica:
+
+   B5
+  / | \
+B3 B4 B1
+      |
+     B2
+
+
+### Conexiones:
+- **B5** conecta directamente con **B1**, **B3** y **B4**.
+- **B2** se conecta a través de **B3**.
+
+Esto genera los siguientes caminos:
+- B1 → B5  
+- B3 → B5  
+- B4 → B5  
+- B2 → B3 → B5
+
+---
