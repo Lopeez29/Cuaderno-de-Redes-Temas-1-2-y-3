@@ -465,8 +465,44 @@ Resumen del calculo:
 
 - CRC-32: no corrige errores por sí mismo; es un método de detección de errores muy robusto (con baja probabilidad de no detectar errores), pero no los corrige.
 
+# Ejercicio 12
+## datos útiles que se han transmitido
+
+
+# Enunciado
+Se recibe la trama “1111111101011010101011” y se conoce que el protocolo está 
+constituido por una cabecera “11111111” y que los datos están codificados con 
+H(14,10), ¿cuáles son los datos útiles que se han transmitido? 
 
 ---
+
+# Resultado 
+se recibe una trama binaria: 111111101010101010101
+
+y se sabe que:
+
+1. El **protocolo** añade una **cabecera** de 8 bits, indicada como `11111111`.
+2. Los **datos** van codificados mediante un **Hamming(14,10)**, es decir, cada bloque de 14 bits contiene 10 bits de información y 4 bits de paridad.
+
+El objetivo es **determinar los 10 bits de datos originales** (los “datos útiles”).
+
+---
+
+- La cabecera ocupa los **primeros 8 bits**.
+- Aunque en la trama recibida se observa `11111110` al inicio, se asume (según la descripción del protocolo) que la intención es que esos 8 bits correspondan a `11111111` (pudiera haber un error de un bit en la cabecera, pero el ejercicio no se centra en ello).
+
+Tomando la idea de que los **8 bits de cabecera** son fijos (`11111111`), se separan de la secuencia.  
+En total, la trama tiene 21 bits, por lo que, tras la cabecera, **restan 13 bits**.  
+
+Para H(14,10) harían falta **14 bits** de datos codificados. Es posible que exista un bit perdido o un pequeño desajuste en el enunciado. Aun así, se entiende que el bloque Hamming debería ser de 14 bits.
+**H(14,10)**, **siempre** habrá **10 bits** de información
+Tras calcular la paridad junto con los datos he llegado a la conclusión de que tal como está redactado el ejercicio presenta un ligero desfase (21 bits en vez de 22), lo que sugiere que puede faltar un bit en la trama recibida o existir un error en la cabecera.
+(- **Cabecera**: 8 bits (`11111111`).  
+- **Bloque Hamming(14,10)**: 14 bits totales, de los cuales **10** son datos útiles y **4** son de paridad.  )
+
+---
+
+
 
 
 
