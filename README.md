@@ -537,8 +537,8 @@ Se observa que:
   # Respuesta
   Se observa que:
   - El **Emisor** envía:
-  1. **Frame 0**, con número de secuencia \(S=0\).
-  2. **Frame 1**, con número de secuencia \(S=1\), que se **pierde** en la red.
+  - **Frame 0**, con número de secuencia \(S=0\).
+  - **Frame 1**, con número de secuencia \(S=1\), que se **pierde** en la red.
 - El **Receptor**:
   - Recibe correctamente el **Frame 0** y envía un **ACK 1**.
   - No recibe el **Frame 1**, así que no puede responder con el **ACK 0** esperado.
