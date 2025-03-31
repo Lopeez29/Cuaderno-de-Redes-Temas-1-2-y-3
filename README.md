@@ -565,7 +565,58 @@ y un transmisor que dispone de 5 tramas desordenadas que llegan en el orden 0, 3
 | Entregados   | 0   | -     | -       | -         | 1,2,3,4      |
 
 
+# Ejercicio 16 
+## Canal coaxial con FMD
+# Enunciado
+16. Un canal coaxial con FDM con una tasa de transmisión de 500 Mbit/s, con una longitud media de trama de 
+1
+𝜇
+=
+12584
+μ
+1
+​
+ =12584 bits y una tasa de llegada de trama 
+𝜆
+=
+20000
+λ=20000 tramas/s:
 
+a) ¿Qué retardo tendrá?
+D = 1 / (μ - λ)
+
+Donde:
+
+- **μ** es la tasa de servicio (en tramas por segundo)
+- **λ** es la tasa de llegada (también en tramas por segundo)
+- **D** es el retardo promedio en segundos
+
+Primero calculamos μ a partir de la tasa de transmisión y el tamaño promedio de trama:
+
+μ = (500 × 10⁶ bits/s) / (12584 bits/trama) ≈ 39725.37 tramas/s
+
+
+
+Luego aplicamos la fórmula del retardo:
+
+
+D = 1 / (39725.37 - 20000) ≈ 5.07 × 10⁻⁵ s = 50.7 μs
+
+
+
+**Resultado final**:  
+**Retardo medio ≈ 50.7 microsegundos**
+
+
+b) Si lo comparten entre 256 usuarios, ¿cuántas portadoras serán necesarias?
+
+256 portadoras
+
+
+c) ¿Cuánto tiempo tardará un nodo en detectar una colisión?
+
+
+T = 12584 bits / 500,000,000 bits/s ≈ 25.17 μs
 
 
 
