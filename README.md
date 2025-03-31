@@ -677,6 +677,27 @@ Siempre hay una transición en la mitad del bit (igual que en Manchester estánd
  **Nota:** Para una visualización completa, se recomienda usar herramientas como Python con `matplotlib` o software como Wireshark (en modo simulación) para representar los cambios de señal.
 
 
+# Ejercicio 18
+## Diseña una red Bluetooth
+
+# Enunciado
+
+
+Diseñar una red Bluetooth que pueda mantener 15 nodos esclavos activos de manera 
+simultánea. 
+
+
+En Bluetooth clásico (versión 2.0/2.1), la red se estructura en forma de **piconet**:
+- Una **piconet** consta de **1 maestro** y hasta **7 esclavos activos** a la vez.
+- Adicionalmente, pueden existir hasta **255 esclavos en modo estacionario** (conectados pero inactivos).
+
+
+Para mantener **15 esclavos activos al mismo tiempo**, se requiere expandir más allá de una única piconet. 
+Crear 3 Piconets independientes
+- Cada piconet tiene **1 maestro + 7 esclavos activos**.
+- Para 15 esclavos, se usarían **3 piconets**, distribuyendo los esclavos entre ellas.
+- Los maestros pueden ser distintos dispositivos o un único dispositivo actuando como **maestro en múltiples piconets secuencialmente**.
+
 
 
 
